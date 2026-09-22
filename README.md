@@ -29,12 +29,14 @@ Contoh format data:
   "suhu": 28.5,
   "kelembaban": 65.0
 }
-HTTP
+
+## HTTP
 Pada percobaan HTTP, ESP32 digunakan sebagai client untuk mengirimkan data ke server menggunakan metode HTTP POST.
 Endpoint pengujian yang digunakan:
 https://httpbin.org/post⁠�
 Komunikasi HTTP menggunakan pola request-response, yaitu ESP32 mengirimkan request kemudian menerima response dari server.
-MQTT
+
+##MQTT
 Pada percobaan MQTT, ESP32 digunakan sebagai publisher untuk mengirimkan data ke broker MQTT.
 Broker yang digunakan:
 Broker: broker.hivemq.com
