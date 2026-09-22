@@ -76,7 +76,7 @@ Library ArduinoJson
 Library PubSubClient
 
 
-Hasil Praktikum
+##Hasil Praktikum
 
 Pada percobaan HTTP, ESP32 digunakan untuk mengirimkan data suhu dan kelembaban dalam format JSON menggunakan metode POST.
 
