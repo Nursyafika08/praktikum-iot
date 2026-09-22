@@ -32,7 +32,7 @@ Contoh format data:
 }
 ```
 
-##HTTP
+## HTTP
 
 Pada percobaan HTTP, ESP32 digunakan sebagai client untuk mengirimkan data ke server menggunakan metode HTTP POST.
 
@@ -42,7 +42,7 @@ https://httpbin.org/post
 
 Komunikasi HTTP menggunakan pola request-response, yaitu ESP32 mengirimkan request kemudian menerima response dari server.
 
-##MQTT
+## MQTT
 
 Pada percobaan MQTT, ESP32 digunakan sebagai publisher untuk mengirimkan data ke broker MQTT.
 
@@ -57,13 +57,13 @@ Data dikirim melalui topic tertentu dan hasil publish diverifikasi menggunakan M
 
 MQTT menggunakan pola publish-subscribe dengan broker sebagai perantara antara publisher dan subscriber.
 
-##JSON
+## JSON
 
 JSON digunakan sebagai format pertukaran data karena data dapat disusun dalam bentuk pasangan key-value.
 
 Pada praktikum ini digunakan library ArduinoJson untuk membuat dan mengubah data menjadi format JSON.
 
-##Hasil Praktikum
+## Hasil Praktikum
 
 Pada percobaan HTTP, data dikirim dari ESP32 ke server menggunakan HTTP POST.
 
@@ -75,9 +75,7 @@ Perbandingan HTTP dan MQTT
   
   MQTT menggunakan pola publish-subscribe dengan broker sebagai perantara antara publisher dan subscriber.
 
-##Kesimpulan
+## Kesimpulan
 
 Pada praktikum ini dipelajari komunikasi data menggunakan HTTP dan MQTT pada ESP32. HTTP menggunakan pola request-response, sedangkan MQTT menggunakan pola publish-subscribe. Data sensor dikemas dalam format JSON untuk dikirim melalui kedua metode komunikasi tersebut.
 
-
-**Jangan hapus tiga tanda ``` setelah JSON**, karena itu yang menutup kotak kode dan mencegah bagian HTTP ikut dianggap sebagai kode.
