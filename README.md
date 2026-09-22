@@ -1,53 +1,25 @@
 # Praktikum IoT
 
-**Nama:** Nursyafika  
-**NIM:** H1H024023  
-**Program Studi:** Teknik Komputer  
+Nama: Nursyafika  
+NIM: H1H024023  
+Program Studi: Teknik Komputer
 
-Repository ini digunakan untuk menyimpan hasil praktikum mata kuliah Internet of Things (IoT).
+Repository ini berisi hasil praktikum mata kuliah Internet of Things (IoT).
 
-## Modul 3 – Protokol Komunikasi IoT
+## Modul 3 - Protokol Komunikasi IoT
 
-Pada Modul 3 dilakukan praktikum mengenai protokol komunikasi yang digunakan dalam sistem IoT, yaitu **HTTP dan MQTT** dengan format pertukaran data **JSON**.
+Modul 3 membahas penggunaan protokol komunikasi HTTP dan MQTT pada sistem IoT dengan format pertukaran data JSON.
 
-### Tujuan Praktikum
+### Materi yang dipraktikkan
 
-Praktikum ini bertujuan untuk:
+Pada modul ini dilakukan dua percobaan:
 
-1. Memahami konsep dasar protokol komunikasi pada sistem IoT.
-2. Memahami karakteristik dan perbedaan HTTP dan MQTT.
-3. Mengimplementasikan pengiriman data dari ESP32 ke server menggunakan HTTP dengan metode POST.
-4. Mengimplementasikan pertukaran data dari ESP32 ke broker MQTT menggunakan pola publish-subscribe.
-5. Menggunakan format JSON untuk pertukaran data.
-6. Membandingkan penggunaan HTTP dan MQTT pada sistem IoT.
+1. Komunikasi data menggunakan HTTP
+2. Komunikasi data menggunakan MQTT
 
-## HTTP
+Data yang digunakan berupa data sensor suhu dan kelembaban dalam format JSON.
 
-HTTP menggunakan pola komunikasi **request-response**. ESP32 berperan sebagai client yang mengirimkan request kepada server, kemudian server memberikan response.
-
-Pada praktikum, HTTP digunakan untuk mengirim data sensor dalam format JSON menggunakan metode POST ke endpoint pengujian:
-
-`httpbin.org/post`
-
-Data yang dikirim berupa data suhu dan kelembaban.
-
-## MQTT
-
-MQTT merupakan protokol komunikasi yang menggunakan pola **publish-subscribe**. Pada komunikasi MQTT terdapat broker sebagai perantara antara publisher dan subscriber.
-
-Pada praktikum digunakan broker:
-
-`broker.hivemq.com`
-
-Port yang digunakan:
-
-`1883`
-
-ESP32 bertindak sebagai publisher dengan mengirimkan data ke sebuah topic. Data tersebut kemudian dapat dipantau menggunakan MQTT Explorer.
-
-## Format JSON
-
-Data yang digunakan dalam praktikum dikemas menggunakan format JSON. Contoh data:
+Contoh format data:
 
 ```json
 {
@@ -55,45 +27,70 @@ Data yang digunakan dalam praktikum dikemas menggunakan format JSON. Contoh data
   "kelembaban": 65.0
 }
 
-Format JSON digunakan agar data dapat disusun secara terstruktur dan mudah dibaca maupun diproses oleh perangkat atau aplikasi lain.
+HTTP
+
+Pada percobaan HTTP, ESP32 digunakan sebagai client untuk mengirimkan data ke server menggunakan metode POST.
+
+Endpoint pengujian yang digunakan:
+
+https://httpbin.org/post
+
+Komunikasi HTTP menggunakan pola request-response, yaitu ESP32 mengirimkan request kemudian menerima response dari server.
+
+MQTT
+
+Pada percobaan MQTT, ESP32 digunakan sebagai publisher untuk mengirimkan data ke broker MQTT.
+
+Broker yang digunakan:
+
+broker.hivemq.com
+
+Port:
+
+1883
+
+Data dikirim melalui topic tertentu dan hasil publish diverifikasi menggunakan MQTT Explorer.
+
+MQTT menggunakan pola publish-subscribe dengan broker sebagai perantara antara publisher dan subscriber.
+
+JSON
+
+JSON digunakan sebagai format pertukaran data karena data dapat disusun dalam bentuk pasangan key-value sehingga lebih mudah dibaca dan diproses.
+
+Pada praktikum ini digunakan library ArduinoJson untuk membuat dan mengubah data menjadi format JSON.
 
 Tools dan Library
 
-Praktikum menggunakan beberapa perangkat dan aplikasi berikut:
-
 ESP32 DevKit
 
-Laptop/PC
-
 Arduino IDE
+
+Kabel USB
 
 Jaringan WiFi
 
 MQTT Explorer
 
-Library ArduinoJson
+ArduinoJson
 
-Library PubSubClient
+PubSubClient
 
 
-##Hasil Praktikum
+Hasil Praktikum
 
-Pada percobaan HTTP, ESP32 digunakan untuk mengirimkan data suhu dan kelembaban dalam format JSON menggunakan metode POST.
+Hasil program dan dokumentasi praktikum Modul 3 disimpan pada folder Modul-3.
 
-Pada percobaan MQTT, ESP32 terhubung ke broker MQTT dan melakukan publish data melalui topic yang telah ditentukan. Data yang dikirim kemudian dapat dilihat melalui MQTT Explorer.
+Pada percobaan HTTP, data dikirim dari ESP32 ke server menggunakan HTTP POST.
 
-Struktur Repository
+Pada percobaan MQTT, data dikirim dari ESP32 ke broker menggunakan mekanisme publish-subscribe dan dapat dipantau melalui MQTT Explorer.
 
-praktikum-iot/
-│
-├── Modul-3/
-│   ├── Modul-3-HTTP.ino
-│   └── Modul-3-MQTT.ino
-│
-└── README.md
+Perbandingan HTTP dan MQTT
+
+HTTP menggunakan pola request-response dan setiap pengiriman dilakukan melalui request kepada server.
+
+MQTT menggunakan pola publish-subscribe dengan broker sebagai perantara. MQTT memiliki overhead komunikasi yang lebih ringan dan cocok untuk pengiriman data IoT secara berkala.
 
 Kesimpulan
 
-Dari praktikum Modul 3 dapat dipahami bahwa HTTP dan MQTT dapat digunakan untuk komunikasi data pada sistem IoT. HTTP menggunakan pola request-response, sedangkan MQTT menggunakan pola publish-subscribe dengan broker sebagai perantara.
+Melalui Modul 3, dapat dipahami penggunaan HTTP dan MQTT sebagai protokol komunikasi pada sistem IoT. Kedua protokol dapat digunakan untuk mengirimkan data dalam format JSON. HTTP menggunakan pola request-response, sedangkan MQTT menggunakan pola publish-subscribe dengan broker sebagai perantara.
 
-Data pada kedua percobaan menggunakan format JSON sehingga data suhu dan kelembaban dapat dikirim dalam bentuk yang terstruktur. MQTT juga memiliki overhead komunikasi yang lebih ringan sehingga sesuai untuk pengiriman data sensor secara berkala dan berkelanjutan.
