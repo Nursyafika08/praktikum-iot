@@ -1,7 +1,7 @@
 # PRAKTIKUM INTERNET OF THINGS (IoT)
-*Nama:* Nursyafika  
-*NIM:* H1H024023  
-*Program Studi:* Teknik Komputer  
+*Nama: Nursyafika  
+*NIM: H1H024023  
+*Program Studi: Teknik Komputer
 
 Repository ini berisi kumpulan program dan hasil pengerjaan Praktikum Internet of Things (IoT) Modul 1 sampai Modul 5.
 
